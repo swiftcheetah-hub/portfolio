@@ -1,0 +1,146 @@
+import React from 'react'
+import { Calendar, Clock, ArrowRight, User } from 'lucide-react'
+
+const Blog = () => {
+  const blogPosts = [
+    {
+      id: 1,
+      title: '10 Tips for First-Time Home Buyers in 2024',
+      excerpt: 'Navigate the real estate market with confidence using these expert tips tailored for first-time buyers.',
+      image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80',
+      date: 'Nov 5, 2024',
+      readTime: '5 min read',
+      category: 'Buying Guide',
+      author: 'Sarah Mitchell',
+    },
+    {
+      id: 2,
+      title: 'The Rise of Smart Homes: Technology Trends',
+      excerpt: 'Discover how smart home technology is transforming modern luxury real estate and what buyers expect.',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      date: 'Nov 1, 2024',
+      readTime: '7 min read',
+      category: 'Technology',
+      author: 'Michael Chen',
+    },
+    {
+      id: 3,
+      title: 'Investment Strategies for Luxury Real Estate',
+      excerpt: 'Learn proven strategies for investing in high-end properties and maximizing your returns in today\'s market.',
+      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+      date: 'Oct 28, 2024',
+      readTime: '6 min read',
+      category: 'Investment',
+      author: 'Sarah Mitchell',
+    },
+    {
+      id: 4,
+      title: 'How to Stage Your Home for Maximum Appeal',
+      excerpt: 'Professional staging tips that will help your property stand out and sell faster in today\'s competitive market.',
+      image: 'https://images.unsplash.com/photo-1600585152915-d0bec72a0df0?w=800&q=80',
+      date: 'Oct 25, 2024',
+      readTime: '4 min read',
+      category: 'Selling Tips',
+      author: 'Michael Chen',
+    },
+    {
+      id: 5,
+      title: 'Neighborhood Spotlight: Beverly Hills Living',
+      excerpt: 'Explore what makes Beverly Hills one of the most sought-after locations for luxury home buyers and investors.',
+      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+      date: 'Oct 20, 2024',
+      readTime: '8 min read',
+      category: 'Location Guide',
+      author: 'Sarah Mitchell',
+    },
+    {
+      id: 6,
+      title: 'Understanding Market Trends in 2024',
+      excerpt: 'An in-depth analysis of current real estate market trends and what they mean for buyers and sellers.',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
+      date: 'Oct 15, 2024',
+      readTime: '6 min read',
+      category: 'Market Analysis',
+      author: 'Michael Chen',
+    },
+  ]
+
+  return (
+    <section id="blog" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+            Latest Insights
+          </h2>
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+            Stay informed with expert advice, market trends, and insider tips from our experienced agents
+          </p>
+        </div>
+
+        {/* Blog Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {blogPosts.map((post) => (
+            <article
+              key={post.id}
+              className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+            >
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-900 text-sm font-semibold rounded-full">
+                  {post.category}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Meta */}
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {post.date}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {post.readTime}
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 mb-4 line-clamp-2">{post.excerpt}</p>
+
+                {/* Author and Read More */}
+                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <User className="w-4 h-4" />
+                    <span className="text-sm">{post.author}</span>
+                  </div>
+                  <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors flex items-center gap-1">
+                    Read More
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* View All Articles Button */}
+        <div className="text-center">
+          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+            View All Articles
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Blog
