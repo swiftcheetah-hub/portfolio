@@ -11,6 +11,7 @@ import Booking from './components/Booking'
 import Contact from './components/Contact'
 import PropertyDetails from './components/PropertyDetails'
 import Footer from './components/Footer'
+import FreeGuide from './components/FreeGuide'
 
 function App() {
   const [scrollY, setScrollY] = useState(0)
@@ -41,10 +42,11 @@ function HomePage() {
       <Hero />
       <About />
       <Properties />
+      <Booking />
+      <FreeGuide />
       <Reviews />
       <Gallery />
       <Blog />
-      <Booking />
       <Contact />
     </>
   )

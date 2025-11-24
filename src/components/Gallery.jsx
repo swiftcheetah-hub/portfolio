@@ -82,14 +82,14 @@ const Gallery = () => {
   }
 
   return (
-    <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
             Property Gallery
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
             Explore stunning visuals of our luxury properties and their exquisite interiors
           </p>
         </div>

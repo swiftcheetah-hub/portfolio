@@ -66,14 +66,14 @@ const Blog = () => {
   ]
 
   return (
-    <section id="blog" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="blog" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
             Latest Insights
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
             Stay informed with expert advice, market trends, and insider tips from our experienced agents
           </p>
         </div>
@@ -83,7 +83,7 @@ const Blog = () => {
           {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+              className="bg-dark-light rounded-2xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300 group cursor-pointer"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -92,7 +92,7 @@ const Blog = () => {
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-900 text-sm font-semibold rounded-full">
+                <div className="absolute top-4 left-4 px-3 py-1 bg-primary text-black text-sm font-semibold rounded-full">
                   {post.category}
                 </div>
               </div>
@@ -100,7 +100,7 @@ const Blog = () => {
               {/* Content */}
               <div className="p-6">
                 {/* Meta */}
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     {post.date}
@@ -111,18 +111,18 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">{post.excerpt}</p>
+                <p className="text-gray-400 mb-4 line-clamp-2">{post.excerpt}</p>
 
                 {/* Author and Read More */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                  <div className="flex items-center gap-2 text-gray-600">
+                <div className="flex items-center justify-between pt-4 border-t border-primary/20">
+                  <div className="flex items-center gap-2 text-gray-400">
                     <User className="w-4 h-4" />
                     <span className="text-sm">{post.author}</span>
                   </div>
-                  <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors flex items-center gap-1">
+                  <button className="text-primary font-semibold hover:text-primary-light transition-colors flex items-center gap-1">
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -134,7 +134,7 @@ const Blog = () => {
 
         {/* View All Articles Button */}
         <div className="text-center">
-          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+          <button className="px-8 py-4 bg-primary text-black font-semibold rounded-lg hover:bg-primary-dark transition-all duration-300">
             View All Articles
           </button>
         </div>

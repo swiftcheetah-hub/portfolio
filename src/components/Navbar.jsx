@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Home, User, Building2, Star, Image, BookOpen, Calendar } from 'lucide-react'
+import { Menu, X, Home, User, Building2, Star, Image, BookOpen, Calendar, Download } from 'lucide-react'
 
 const Navbar = ({ scrollY }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +13,7 @@ const Navbar = ({ scrollY }) => {
     
     // Update active section based on scroll position
     const handleScroll = () => {
-      const sections = ['home', 'about', 'properties', 'reviews', 'gallery', 'blog', 'booking', 'contact']
+      const sections = ['home', 'about', 'properties', 'booking', 'free-guide', 'reviews', 'gallery', 'blog', 'contact']
       const current = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -34,6 +34,7 @@ const Navbar = ({ scrollY }) => {
     { name: 'About', href: '/#about', id: 'about', icon: User },
     { name: 'Properties', href: '/#properties', id: 'properties', icon: Building2 },
     { name: 'Appraisal', href: '/#booking', id: 'booking', icon: Calendar },
+    { name: 'Free Guide', href: '/#free-guide', id: 'free-guide', icon: Download },
     { name: 'Reviews', href: '/#reviews', id: 'reviews', icon: Star },
     { name: 'Gallery', href: '/#gallery', id: 'gallery', icon: Image },
     { name: 'Blog', href: '/#blog', id: 'blog', icon: BookOpen },
