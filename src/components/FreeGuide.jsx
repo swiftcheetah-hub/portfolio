@@ -55,19 +55,19 @@ const FreeGuide = () => {
     {
       name: 'Jessica Martinez',
       role: 'Real Estate Investor',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
+      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400',
       quote: 'This guide helped me identify profitable investment opportunities I would have missed otherwise.'
     },
     {
       name: 'David Park',
       role: 'First-Time Buyer',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400',
       quote: 'Clear, actionable insights that gave me confidence in making my first luxury property purchase.'
     },
     {
       name: 'Amanda Roberts',
       role: 'Portfolio Manager',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400',
       quote: 'The market analysis section alone is worth thousands. Essential reading for serious investors.'
     },
   ]

@@ -82,7 +82,7 @@ This is truly a one-of-a-kind property that must be seen to be appreciated.`,
       name: 'Sarah Mitchell',
       phone: '+1 (555) 123-4567',
       email: 'sarah@eliteproperties.com',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600',
     },
   }
 

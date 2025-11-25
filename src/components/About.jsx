@@ -36,7 +36,7 @@ const About = () => {
     {
       name: 'Sarah Mitchell',
       role: 'Senior Real Estate Agent & Co-Founder',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600',
       description: 'With over 15 years of experience in luxury real estate, Sarah has built a reputation for exceptional service and market expertise. Her dedication to understanding client needs and delivering personalized solutions has made her one of the top agents in the region.',
       specialties: ['Luxury Residential', 'Investment Properties', 'Waterfront Estates'],
       education: 'MBA, Harvard Business School',
@@ -53,7 +53,7 @@ const About = () => {
     {
       name: 'Michael Chen',
       role: 'Senior Real Estate Agent & Co-Founder',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1652878530627-cc6f063e3947?w=600',
       description: 'Michael brings 12 years of diverse real estate experience, specializing in both commercial and high-end residential properties. His analytical approach and negotiation skills have helped countless clients achieve their real estate goals and maximize their investments.',
       specialties: ['Commercial Real Estate', 'New Developments', 'Property Investment'],
       education: 'B.S. Finance, UC Berkeley',
@@ -153,28 +153,28 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-xl overflow-hidden border border-primary/20">
                 <img
-                  src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80"
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400"
                   alt="Property Model"
                   className="w-full h-full object-cover aspect-square"
                 />
               </div>
               <div className="rounded-xl overflow-hidden border border-primary/20">
                 <img
-                  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80"
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400"
                   alt="Modern Living Room"
                   className="w-full h-full object-cover aspect-square"
                 />
               </div>
               <div className="rounded-xl overflow-hidden border border-primary/20">
                 <img
-                  src="https://images.unsplash.com/photo-1600585152915-d0bec72a0df0?w=600&q=80"
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400"
                   alt="Modern House Exterior"
                   className="w-full h-full object-cover aspect-square"
                 />
               </div>
               <div className="rounded-xl overflow-hidden border border-primary/20">
                 <img
-                  src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=600&q=80"
+                  src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400"
                   alt="Interior Space"
                   className="w-full h-full object-cover aspect-square"
                 />

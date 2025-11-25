@@ -101,7 +101,7 @@ const Hero = () => {
                     {/* Sarah Mitchell - First Profile */}
                     <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600"
                         alt="Sarah Mitchell"
                         className="w-full h-full object-cover"
                       />
@@ -109,7 +109,7 @@ const Hero = () => {
                     {/* Michael Chen - Second Profile (overlapping) */}
                     <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden -ml-2">
                       <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                        src="https://images.unsplash.com/photo-1652878530627-cc6f063e3947?w=600"
                         alt="Michael Chen"
                         className="w-full h-full object-cover"
                       />

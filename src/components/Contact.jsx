@@ -32,26 +32,26 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
             Get in Touch
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto">
             Ready to find your dream property? Contact us today and let's make it happen
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Panel - Contact Form */}
-          <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Send us a Message</h3>
+          <div className="bg-dark-light rounded-2xl p-8 border border-primary/20">
+            <h3 className="text-2xl font-bold mb-6 text-white">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-gray-700">
+                  <label className="block text-sm font-semibold mb-2 text-gray-300">
                     First Name
                   </label>
                   <input
@@ -60,13 +60,13 @@ const Contact = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-dark border border-primary/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                     placeholder="John"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-gray-700">
+                  <label className="block text-sm font-semibold mb-2 text-gray-300">
                     Last Name
                   </label>
                   <input
@@ -75,14 +75,14 @@ const Contact = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-dark border border-primary/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                     placeholder="Doe"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
+                <label className="block text-sm font-semibold mb-2 text-gray-300">
                   Email
                 </label>
                 <input
@@ -91,13 +91,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 bg-dark border border-primary/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
+                <label className="block text-sm font-semibold mb-2 text-gray-300">
                   Phone
                 </label>
                 <input
@@ -106,13 +106,13 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 bg-dark border border-primary/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
+                <label className="block text-sm font-semibold mb-2 text-gray-300">
                   Preferred Agent
                 </label>
                 <input
@@ -120,13 +120,13 @@ const Contact = () => {
                   name="preferredAgent"
                   value={formData.preferredAgent}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 bg-dark border border-primary/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                   placeholder="Select an agent (optional)"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">
+                <label className="block text-sm font-semibold mb-2 text-gray-300">
                   Message
                 </label>
                 <textarea
@@ -135,7 +135,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-primary transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-dark border border-primary/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors resize-none"
                   placeholder="Tell us about your property needs..."
                 />
               </div>
@@ -153,38 +153,38 @@ const Contact = () => {
           {/* Right Panel */}
           <div className="space-y-6">
             {/* Contact Information Card */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Contact Information</h3>
+            <div className="bg-dark-light rounded-2xl p-8 border border-primary/20">
+              <h3 className="text-2xl font-bold mb-6 text-white">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-700">+1 (555) 123-4567</p>
-                    <p className="text-gray-500 text-sm mt-1">Mon-Fri 9am-6pm</p>
+                    <h4 className="font-semibold text-white mb-1">Phone</h4>
+                    <p className="text-gray-300">+1 (555) 123-4567</p>
+                    <p className="text-gray-400 text-sm mt-1">Mon-Fri 9am-6pm</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-700">info@eliteproperties.com</p>
-                    <p className="text-gray-500 text-sm mt-1">24/7 Support</p>
+                    <h4 className="font-semibold text-white mb-1">Email</h4>
+                    <p className="text-gray-300">info@eliteproperties.com</p>
+                    <p className="text-gray-400 text-sm mt-1">24/7 Support</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-pink-600" />
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Office</h4>
-                    <p className="text-gray-700">
+                    <h4 className="font-semibold text-white mb-1">Office</h4>
+                    <p className="text-gray-300">
                       9200 Sunset Blvd, Suite 500
                       <br />
                       Los Angeles, CA 90069
@@ -195,23 +195,23 @@ const Contact = () => {
             </div>
 
             {/* Our Agents Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Our Agents</h3>
+            <div className="bg-dark-light rounded-2xl p-8 border border-primary/20">
+              <h3 className="text-2xl font-bold mb-6 text-white">Our Agents</h3>
               <div className="space-y-6">
                 {/* Sarah Mitchell */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                  <h4 className="font-bold text-lg mb-1">Sarah Mitchell</h4>
-                  <p className="text-white/90 text-sm mb-2">Senior Real Estate Agent</p>
-                  <p className="text-white/80 text-sm">sarah@eliteproperties.com</p>
-                  <p className="text-white/80 text-sm">+1 (555) 234-5678</p>
+                <div className="bg-dark rounded-xl p-4 border border-primary/20">
+                  <h4 className="font-bold text-lg mb-1 text-white">Sarah Mitchell</h4>
+                  <p className="text-primary text-sm mb-2">Senior Real Estate Agent</p>
+                  <p className="text-gray-400 text-sm">sarah@eliteproperties.com</p>
+                  <p className="text-gray-400 text-sm">+1 (555) 234-5678</p>
                 </div>
 
                 {/* Michael Chen */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                  <h4 className="font-bold text-lg mb-1">Michael Chen</h4>
-                  <p className="text-white/90 text-sm mb-2">Senior Real Estate Agent</p>
-                  <p className="text-white/80 text-sm">michael@eliteproperties.com</p>
-                  <p className="text-white/80 text-sm">+1 (555) 345-6789</p>
+                <div className="bg-dark rounded-xl p-4 border border-primary/20">
+                  <h4 className="font-bold text-lg mb-1 text-white">Michael Chen</h4>
+                  <p className="text-primary text-sm mb-2">Senior Real Estate Agent</p>
+                  <p className="text-gray-400 text-sm">michael@eliteproperties.com</p>
+                  <p className="text-gray-400 text-sm">+1 (555) 345-6789</p>
                 </div>
               </div>
             </div>
