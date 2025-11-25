@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Contact = () => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 })
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -32,7 +34,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
+    <section id="contact" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

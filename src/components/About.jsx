@@ -1,7 +1,9 @@
 import React from 'react'
 import { Award, Target, Lightbulb, TrendingUp, Shield, Heart, Users, CheckCircle, Trophy } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const About = () => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 })
   const stats = [
     { label: 'Total Sales Volume', value: '$250M+', icon: TrendingUp },
     { label: 'Properties Sold', value: '380+', icon: Award },
@@ -103,7 +105,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark-light">
+    <section id="about" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark-light section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
       <div className="max-w-7xl mx-auto">
         {/* About Elite Properties Section */}
         <div className="text-center mb-20">
@@ -301,28 +303,56 @@ const About = () => {
           </p>
           <div className="relative max-w-4xl mx-auto">
             {/* Vertical Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary/30 hidden md:block" />
+            <div 
+              className={`absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/30 hidden md:block ${sectionVisible ? 'timeline-line-animate' : ''}`}
+              style={{ height: sectionVisible ? '100%' : '0' }}
+            />
 
             {/* Timeline Items */}
             <div className="space-y-12">
-              {timeline.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-center gap-8 ${
-                    idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  <div className="flex-1 bg-dark-lighter rounded-xl p-6 border border-gray-700">
-                    <div className={`text-primary font-bold text-lg mb-2 ${idx % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                      {item.year}
+              {timeline.map((item, idx) => {
+                const isEven = idx % 2 === 0
+                return (
+                  <div
+                    key={idx}
+                    className={`flex items-center gap-8 ${
+                      isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                  >
+                    <div 
+                      className={`flex-1 bg-dark-lighter rounded-xl p-6 border border-gray-700 timeline-card section-animate ${isEven ? 'section-fade-left' : 'section-fade-right'} ${sectionVisible ? 'animate-in' : ''}`}
+                      style={{ transitionDelay: `${0.3 + idx * 0.15}s` }}
+                    >
+                      <div 
+                        className={`text-primary font-bold text-lg mb-2 timeline-card-element ${isEven ? 'text-right' : 'text-left'} ${sectionVisible ? 'animate-in' : ''}`}
+                        style={{ transitionDelay: `${0.3 + idx * 0.15 + 0.1}s` }}
+                      >
+                        {item.year}
+                      </div>
+                      <h4 
+                        className={`text-xl font-bold text-white mb-2 timeline-card-element ${sectionVisible ? 'animate-in' : ''}`}
+                        style={{ transitionDelay: `${0.3 + idx * 0.15 + 0.2}s` }}
+                      >
+                        {item.title}
+                      </h4>
+                      <p 
+                        className={`text-gray-400 timeline-card-element ${sectionVisible ? 'animate-in' : ''}`}
+                        style={{ transitionDelay: `${0.3 + idx * 0.15 + 0.3}s` }}
+                      >
+                        {item.description}
+                      </p>
                     </div>
-                    <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                    <p className="text-gray-400">{item.description}</p>
+                    <div 
+                      className={`w-4 h-4 bg-primary rounded-full border-4 border-dark z-10 flex-shrink-0 hidden md:block section-animate section-scale ${sectionVisible ? 'animate-in timeline-dot-animate' : ''}`}
+                      style={{ 
+                        transitionDelay: `${0.4 + idx * 0.15}s`,
+                        animationDelay: `${0.4 + idx * 0.15}s`
+                      }}
+                    />
+                    <div className="flex-1 hidden md:block" />
                   </div>
-                  <div className="w-4 h-4 bg-primary rounded-full border-4 border-dark z-10 flex-shrink-0 hidden md:block" />
-                  <div className="flex-1 hidden md:block" />
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>

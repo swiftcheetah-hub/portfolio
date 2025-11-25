@@ -1,7 +1,9 @@
 import React from 'react'
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Blog = () => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 })
   const blogPosts = [
     {
       id: 1,
@@ -66,7 +68,7 @@ const Blog = () => {
   ]
 
   return (
-    <section id="blog" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
+    <section id="blog" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -80,10 +82,11 @@ const Blog = () => {
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post, idx) => (
             <article
               key={post.id}
-              className="bg-dark-light rounded-2xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300 group cursor-pointer"
+              className={`bg-dark-light rounded-2xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300 group cursor-pointer section-animate section-scale ${sectionVisible ? 'animate-in' : ''}`}
+              style={{ transitionDelay: `${idx * 0.1}s` }}
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">

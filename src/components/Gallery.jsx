@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null)
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 })
 
   const galleryImages = [
     {
@@ -82,7 +84,7 @@ const Gallery = () => {
   }
 
   return (
-    <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
+    <section id="gallery" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -96,10 +98,11 @@ const Gallery = () => {
 
         {/* Gallery Grid - 3x3 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {galleryImages.map((image) => (
+          {galleryImages.map((image, idx) => (
             <div
               key={image.id}
-              className="relative group cursor-pointer overflow-hidden rounded-xl aspect-square"
+              className={`relative group cursor-pointer overflow-hidden rounded-xl aspect-square section-animate section-scale ${sectionVisible ? 'animate-in' : ''}`}
+              style={{ transitionDelay: `${idx * 0.05}s` }}
               onClick={() => openLightbox(image)}
             >
               <img

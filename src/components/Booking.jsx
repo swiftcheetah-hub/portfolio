@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Calendar, Clock, User, CheckCircle, ArrowRight, ArrowLeft, Star, ChevronDown } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Booking = () => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 })
   const [step, setStep] = useState(1)
   const [selectedDate, setSelectedDate] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
@@ -131,7 +133,7 @@ const Booking = () => {
 
   if (bookingComplete) {
     return (
-      <section id="booking" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
+      <section id="booking" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-dark-lighter rounded-2xl p-12 border border-gray-700">
             <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -196,7 +198,7 @@ const Booking = () => {
   }
 
   return (
-    <section id="booking" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
+    <section id="booking" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

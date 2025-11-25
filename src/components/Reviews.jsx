@@ -1,7 +1,9 @@
 import React from 'react'
 import { Star, Quote } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Reviews = () => {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 })
   const reviews = [
     {
       id: 1,
@@ -66,7 +68,7 @@ const Reviews = () => {
   ]
 
   return (
-    <section id="reviews" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
+    <section id="reviews" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -80,10 +82,11 @@ const Reviews = () => {
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {reviews.map((review) => (
+          {reviews.map((review, idx) => (
             <div
               key={review.id}
-              className="bg-dark-light rounded-xl p-6 border border-primary/30 relative hover:border-primary/50 transition-all duration-300"
+              className={`bg-dark-light rounded-xl p-6 border border-primary/30 relative hover:border-primary/50 transition-all duration-300 section-animate section-scale ${sectionVisible ? 'animate-in' : ''}`}
+              style={{ transitionDelay: `${idx * 0.1}s` }}
             >
               {/* Large Quote Icon */}
               <div className="absolute top-4 right-4">

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Bed, Bath, Square, MapPin, ArrowRight, Building2, Star, Filter } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const Properties = () => {
   const [filter, setFilter] = useState('all')
   const navigate = useNavigate()
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 })
 
   const properties = [
     {
@@ -107,7 +109,7 @@ const Properties = () => {
   ]
 
   return (
-    <section id="properties" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark">
+    <section id="properties" ref={sectionRef} className={`py-24 px-4 sm:px-6 lg:px-8 bg-dark section-animate section-fade-up ${sectionVisible ? 'animate-in' : ''}`}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -139,10 +141,11 @@ const Properties = () => {
 
         {/* Properties Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProperties.map((property) => (
+          {filteredProperties.map((property, idx) => (
             <div
               key={property.id}
-              className="bg-dark-lighter rounded-2xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-300 group cursor-pointer"
+              className={`bg-dark-lighter rounded-2xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-300 group cursor-pointer section-animate section-scale ${sectionVisible ? 'animate-in' : ''}`}
+              style={{ transitionDelay: `${idx * 0.1}s` }}
               onClick={() => navigate(`/property/${property.id}`)}
             >
               {/* Image */}
